@@ -1,6 +1,6 @@
 # Web Server
 
-Nginx & PHP 7 web server.
+Nginx & PHP 7 web server with Supervisor and Laravel Horizon.
 
 # Laravel Application - Quick Run
 
@@ -8,6 +8,11 @@ Using the Laravel installer you can get up and running with a Laravel applicatio
 
 - Create a new Laravel application `$ laravel new testapp`
 - Change to the applications directory `$ cd testapp`
+- Install Laravel Horizon `$ composer require laravel/horizon`
+- Publish horizon assets `$ php artisan horizon:install`
+- Create failed_jobs table `$ php artisan queue:failed-table`
+- Then Migrate `$ php artisan migrate`
+- Visit the laravel website to check another laravel horizon configurations: https://laravel.com/docs/5.7/horizon#installation
 - Start the container and attach the application. `$ docker run -d -p 4488:80 --name=testapp -v $PWD:/var/www creativitykills/nginx-php-server`
 - Visit the Docker container URL like [http://0.0.0.0:4488](http://0.0.0.0:4488). Profit!
 
@@ -17,6 +22,7 @@ Here are some args
 
 - `NGINX_HTTP_PORT` - HTTP port. Default: `80`.
 - `NGINX_HTTPS_PORT` - HTTPS port. Default: `443`.
+- `REDIS_PORT` - Redis port. Default: `6379`.
 - `COMPOSER_HASH` - Composer hash. Default: `544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061`.
 - `PHP_VERSION` - The PHP version to install. Supports: `7.2`. Default: `7.2`.
 - `ALPINE_VERSION` - The Alpine version. Supports: `3.7`. Default: `3.7`.
