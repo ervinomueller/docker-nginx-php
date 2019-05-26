@@ -13,8 +13,6 @@ Using the Laravel installer you can get up and running with a Laravel applicatio
 - Create failed_jobs table `$ php artisan queue:failed-table`
 - Then Migrate `$ php artisan migrate`
 - Visit the laravel website to check another laravel horizon configurations: https://laravel.com/docs/5.7/horizon#installation
-- Start the container and attach the application. `$ docker run -d -p 4488:80 --name=testapp -v $PWD:/var/www creativitykills/nginx-php-server`
-- Visit the Docker container URL like [http://0.0.0.0:4488](http://0.0.0.0:4488). Profit!
 
 ### Args
 
