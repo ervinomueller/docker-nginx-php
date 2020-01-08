@@ -8,6 +8,7 @@ LABEL maintainer="Ervino Mueller <ervinomueller@outlook.com>"
 
 # INSTALL SOME SYSTEM PACKAGES.
 RUN apk --update --no-cache add ca-certificates \
+    procps \
     bash \
     redis \
     supervisor
@@ -47,6 +48,7 @@ RUN apk add --no-cache --update php-fpm@php \
     php-mbstring@php \
     php-phar@php \
     php-posix@php \
+    php-pdo_sqlite@php \
     php-session@php \
     php-dom@php \
     php-ctype@php \
